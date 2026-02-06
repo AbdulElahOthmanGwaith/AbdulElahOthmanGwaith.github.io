@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="الموقع الشخصي لعبد الإله عثمان غويث - روابط الملفات الشخصية والتحقق الرسمي.">
-    <meta name="keywords" content="عبد الإله عثمان غويث, AbdulElah Othman Gwaith, موقع شخصي, GitHub">
+    
+    <!-- SEO المتقدم -->
+    <title>عبد الإله عثمان غويث | الموقع الشخصي الرسمي</title>
+    <meta name="description" content="الموقع الرسمي لعبد الإله عثمان غويث. خبير تقني مهتم بتطوير الويب، الأمن السيبراني، والذكاء الاصطناعي. استكشف مشاريعي وروابط التواصل الرسمية.">
+    <meta name="keywords" content="عبد الإله عثمان غويث, AbdulElah Othman Gwaith, مطور ويب, خبير تقني, السعودية, جيثب, تكنولوجيا">
     <meta name="author" content="عبد الإله عثمان غويث">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abdulelahothmangwaith.github.io/">
+    <meta property="og:title" content="عبد الإله عثمان غويث | الموقع الشخصي الرسمي">
+    <meta property="og:description" content="المساحة الرقمية الرسمية لعبد الإله عثمان غويث. روابط التحقق والملفات الشخصية.">
+    <meta property="og:image" content="https://abdulelahothmangwaith.github.io/profile.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://abdulelahothmangwaith.github.io/">
+    <meta property="twitter:title" content="عبد الإله عثمان غويث | الموقع الشخصي الرسمي">
+    <meta property="twitter:description" content="استكشف الروابط الرسمية والمشاريع التقنية لعبد الإله عثمان غويث.">
+    <meta property="twitter:image" content="https://abdulelahothmangwaith.github.io/profile.png">
+
+    <!-- JSON-LD Schema (مهم جداً لجوجل) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "عبد الإله عثمان غويث",
+      "alternateName": "AbdulElah Othman Gwaith",
+      "url": "https://abdulelahothmangwaith.github.io/",
+      "image": "https://abdulelahothmangwaith.github.io/profile.png",
+      "sameAs": [
+        "https://github.com/AbdulElahOthmanGwaith"
+      ],
+      "jobTitle": "Technical Enthusiast",
+      "description": "مهتم بالتقنية وتطوير الويب والأمن السيبراني"
+    }
+    </script>
+
     <link rel="canonical" href="https://abdulelahothmangwaith.github.io/">
-    <title>عبد الإله عثمان غويث | الموقع الشخصي</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-<body>
+<body class="light-theme">
     <header>
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <i class="fas fa-user-circle"></i>
+                    <i class="fas fa-user-shield"></i>
                     <span>عبد الإله عثمان غويث</span>
                 </a>
                 <nav>
@@ -26,6 +61,7 @@
                         <li><a href="#about">عني</a></li>
                         <li><a href="#skills">المهارات</a></li>
                         <li><a href="#links">الروابط</a></li>
+                        <li><button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button></li>
                     </ul>
                 </nav>
             </div>
@@ -34,56 +70,73 @@
 
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content">
-                <img src="profile.png" alt="عبد الإله عثمان غويث" class="profile-img">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="profile-wrapper">
+                    <img src="profile.png" alt="عبد الإله عثمان غويث" class="profile-img">
+                    <div class="status-badge">متصل</div>
+                </div>
                 <h1 class="hero-title">عبد الإله عثمان غويث</h1>
                 <p class="hero-description">
-                    مرحباً بك في مساحتي الرقمية. أنا مهتم بالتقنية والابتكار، وهذا الموقع هو بوابتي الرسمية لتوثيق حضوري الرقمي والتحقق من ملكية النطاق.
+                    مرحباً بك في مساحتي الرقمية المتطورة. أنا شغوف ببناء حلول تقنية مبتكرة وتأمين الفضاء الرقمي.
                 </p>
                 <div class="hero-actions">
                     <a href="#links" class="btn btn-primary">
-                        <i class="fas fa-external-link-alt"></i>
-                        استكشف الروابط
+                        <i class="fas fa-rocket"></i>
+                        استكشف أعمالي
+                    </a>
+                    <a href="mailto:contact@example.com" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i>
+                        تواصل مباشر
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="wave-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f8fafc" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2 class="section-title">عن عبد الإله</h2>
-            <div class="card" style="max-width: 850px; margin: 0 auto;">
-                <p style="font-size: 1.1rem; color: #4b5563;">
-                    أنا <strong>عبد الإله عثمان غويث</strong>، أستخدم هذا الموقع كمنصة رسمية لتوثيق حضوري الرقمي والتحقق من ملكية النطاق لدى محركات البحث العالمية مثل Google. أسعى دائماً لمواكبة التطورات التقنية وبناء هوية رقمية موثوقة.
-                </p>
+            <h2 class="section-title" data-aos="fade-up">عن عبد الإله</h2>
+            <div class="about-grid">
+                <div class="card about-card" data-aos="fade-right">
+                    <div class="icon-box"><i class="fas fa-user-tie"></i></div>
+                    <h3>من أنا؟</h3>
+                    <p>أنا <strong>عبد الإله عثمان غويث</strong>، متخصص تقني أسعى لترك بصمة إيجابية في العالم الرقمي من خلال الابتكار المستمر والتعلم الدائم.</p>
+                </div>
+                <div class="card about-card" data-aos="fade-left">
+                    <div class="icon-box"><i class="fas fa-bullseye"></i></div>
+                    <h3>رؤيتي</h3>
+                    <p>أطمح للمساهمة في تطوير مشاريع تقنية تخدم المجتمع وتعزز من أمن وخصوصية البيانات في العصر الرقمي.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" style="background-color: #f1f5f9;">
+    <section id="skills" class="alt-bg">
         <div class="container">
-            <h2 class="section-title">مجالات الاهتمام والمهارات</h2>
+            <h2 class="section-title" data-aos="fade-up">الخبرات والمهارات</h2>
             <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-code" style="color: #2563eb;"></i>
-                    <span>تطوير الويب</span>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>تطوير الواجهات</span>
+                    <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
                 </div>
-                <div class="skill-item">
-                    <i class="fas fa-shield-alt" style="color: #10b981;"></i>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-user-shield"></i>
                     <span>الأمن السيبراني</span>
+                    <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
                 </div>
-                <div class="skill-item">
-                    <i class="fas fa-database" style="color: #f59e0b;"></i>
-                    <span>إدارة البيانات</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-cloud" style="color: #06b6d4;"></i>
-                    <span>الحوسبة السحابية</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-robot" style="color: #8b5cf6;"></i>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-brain"></i>
                     <span>الذكاء الاصطناعي</span>
+                    <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
+                </div>
+                <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-server"></i>
+                    <span>إدارة السيرفرات</span>
+                    <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
                 </div>
             </div>
         </div>
@@ -91,25 +144,31 @@
 
     <section id="links">
         <div class="container">
-            <h2 class="section-title">الروابط الرسمية</h2>
+            <h2 class="section-title" data-aos="fade-up">الروابط الرسمية</h2>
             <div class="grid">
-                <div class="card">
-                    <i class="fab fa-github" style="color: #333;"></i>
+                <div class="card link-card" data-aos="flip-left">
+                    <div class="card-header github">
+                        <i class="fab fa-github"></i>
+                    </div>
                     <h3>GitHub</h3>
-                    <p>استكشف مشاريعي البرمجية ومساهماتي في عالم المصادر المفتوحة.</p>
-                    <a href="https://github.com/AbdulElahOthmanGwaith" target="_blank" class="btn" style="background: #333; color: white; width: 100%; justify-content: center;">زيارة الملف</a>
+                    <p>المستودع الرسمي لمشاريعي البرمجية وأكواد المصدر المفتوح.</p>
+                    <a href="https://github.com/AbdulElahOthmanGwaith" target="_blank" class="btn btn-dark">زيارة المستودع</a>
                 </div>
-                <div class="card">
-                    <i class="fas fa-check-circle" style="color: #2563eb;"></i>
+                <div class="card link-card" data-aos="flip-up">
+                    <div class="card-header google">
+                        <i class="fab fa-google"></i>
+                    </div>
                     <h3>التحقق من Google</h3>
-                    <p>ملف التحقق الرسمي لخدمات Google Search Console.</p>
-                    <a href="google3c147320b7d46152.html" class="btn" style="background: #2563eb; color: white; width: 100%; justify-content: center;">عرض الملف</a>
+                    <p>ملف التوثيق الرسمي لملكية النطاق وخدمات البحث.</p>
+                    <a href="google3c147320b7d46152.html" class="btn btn-blue">عرض التوثيق</a>
                 </div>
-                <div class="card">
-                    <i class="fas fa-envelope" style="color: #ef4444;"></i>
+                <div class="card link-card" data-aos="flip-right">
+                    <div class="card-header contact">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
                     <h3>تواصل معي</h3>
-                    <p>هل لديك استفسار أو ترغب في التعاون؟ يسعدني تواصلك الدائم.</p>
-                    <a href="mailto:contact@example.com" class="btn" style="background: #ef4444; color: white; width: 100%; justify-content: center;">إرسال بريد</a>
+                    <p>متاح دائماً للمناقشات التقنية وفرص التعاون المهني.</p>
+                    <a href="mailto:contact@example.com" class="btn btn-red">إرسال رسالة</a>
                 </div>
             </div>
         </div>
@@ -117,15 +176,53 @@
 
     <footer>
         <div class="container">
-            <div class="footer-socials">
-                <a href="https://github.com/AbdulElahOthmanGwaith" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-user-shield"></i>
+                    <span>عبد الإله عثمان غويث</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/AbdulElahOthmanGwaith" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="copyright">جميع الحقوق محفوظة &copy; 2026 عبد الإله عثمان غويث</p>
+                <div class="visitor-counter">
+                    <i class="fas fa-eye"></i> زائر رقم: <span id="count">1,240</span>
+                </div>
             </div>
-            <p class="copyright">جميع الحقوق محفوظة &copy; 2026 عبد الإله عثمان غويث</p>
-            <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">تم التطوير بكل حب لدعم الهوية الرقمية</p>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // ميزة الوضع الليلي
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // حفظ التفضيلات
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-theme');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+    </script>
 </body>
 </html>
-
