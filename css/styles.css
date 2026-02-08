@@ -372,3 +372,126 @@ footer {
 .linkedin-card { background: #0077b5; }
 .btn-linkedin { background: #0077b5; color: white; }
 .btn-linkedin:hover { background: #005582; color: white; }
+
+/* Project Cards */
+.project-card {
+    text-align: right;
+    padding: 0;
+    overflow: hidden;
+}
+
+.project-img-placeholder {
+    height: 150px;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    opacity: 0.8;
+}
+
+.project-card h3 { padding: 20px 20px 10px; }
+.project-card p { padding: 0 20px 20px; font-size: 0.9rem; }
+
+.tags {
+    padding: 0 20px 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tags span {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Certifications */
+.certs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cert-item {
+    background: var(--card);
+    padding: 20px 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    transition: var(--transition);
+}
+
+.cert-item:hover {
+    transform: translateX(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.cert-item i {
+    font-size: 2rem;
+    color: #f59e0b;
+}
+
+.cert-info h4 { margin-bottom: 5px; }
+.cert-info p { color: var(--text-light); font-size: 0.9rem; }
+
+/* Contact Section */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-info h3 { font-size: 2rem; margin-bottom: 20px; }
+.contact-details { margin-top: 30px; }
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.detail-item i { color: var(--primary); width: 20px; }
+
+.contact-form {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.dark-theme .form-group input, .dark-theme .form-group textarea {
+    border-color: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper { grid-template-columns: 1fr; }
+}
