@@ -495,3 +495,46 @@ footer {
 @media (max-width: 768px) {
     .contact-wrapper { grid-template-columns: 1fr; }
 }
+
+/* Project Links Styles */
+.project-links {
+    padding: 0 20px 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-sm {
+    padding: 6px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    background: var(--primary);
+    color: white;
+}
+
+.btn-sm:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.google-card { background: #4285f4; }
+.btn-google { background: #4285f4; color: white; }
+.btn-google:hover { background: #357ae8; color: white; }
+
+/* General UI Fixes */
+.hero-title {
+    line-height: 1.2;
+}
+
+[data-aos] {
+    pointer-events: none;
+}
+
+.aos-animate {
+    pointer-events: auto;
+}
