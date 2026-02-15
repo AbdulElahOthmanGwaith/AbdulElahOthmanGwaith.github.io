@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>دراسة حالة: مشروع أمن سياسة أمان المحتوى (CSP Security Project) | عبدالاله عثمان غويث</title>
+    <meta name="description" content="دراسة حالة مفصلة لمشروع أمن سياسة أمان المحتوى (CSP Security Project) من عبدالاله عثمان غويث. تحديات، حلول، وتقنيات مستخدمة.">
+    <meta name="keywords" content="CSP Security Project, دراسة حالة, أمن سيبراني, سياسة أمان المحتوى, عبدالاله عثمان غويث, XSS, أمان الويب">
+    <meta name="author" content="عبدالاله عثمان غويث">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://abdulelahothmangwaith.github.io/csp-security-case-study.html">
+    <meta property="og:title" content="دراسة حالة: مشروع أمن سياسة أمان المحتوى (CSP Security Project)">
+    <meta property="og:description" content="دراسة حالة مفصلة لمشروع أمن سياسة أمان المحتوى (CSP Security Project) من عبدالاله عثمان غويث. تحديات، حلول، وتقنيات مستخدمة.">
+    <meta property="og:image" content="https://abdulelahothmangwaith.github.io/profile.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://abdulelahothmangwaith.github.io/csp-security-case-study.html">
+    <meta property="twitter:title" content="دراسة حالة: مشروع أمن سياسة أمان المحتوى (CSP Security Project)">
+    <meta property="twitter:description" content="دراسة حالة مفصلة لمشروع أمن سياسة أمان المحتوى (CSP Security Project) من عبدالاله عثمان غويث.">
+    <meta property="twitter:image" content="https://abdulelahothmangwaith.github.io/profile.png">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="canonical" href="https://abdulelahothmangwaith.github.io/csp-security-case-study.html">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="light-theme">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-code"></i>
+                    <span>عبدالاله عثمان غويث</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">الرئيسية</a></li>
+                        <li><a href="index.html#about">عني</a></li>
+                        <li><a href="index.html#services">الخدمات</a></li>
+                        <li><a href="index.html#projects">المشاريع</a></li>
+                        <li><a href="index.html#skills">المهارات</a></li>
+                        <li><a href="index.html#links">الروابط</a></li>
+                        <li><a href="index.html#contact">تواصل</a></li>
+                        <li><button id="theme-toggle" class="theme-btn" title="تغيير المظهر"><i class="fas fa-moon"></i></button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="case-study-hero">
+        <div class="container">
+            <h1 class="case-study-title" data-aos="fade-up">دراسة حالة: مشروع أمن سياسة أمان المحتوى (CSP Security Project)</h1>
+            <p class="case-study-subtitle" data-aos="fade-up" data-aos-delay="100">تعزيز أمان الويب ضد هجمات XSS من خلال تطبيق CSP</p>
+        </div>
+    </section>
+
+    <section id="case-study-content">
+        <div class="container">
+            <div class="case-study-body" data-aos="fade-up">
+                <!-- Content from csp-security-case-study.md will be inserted here -->
+                <h2>الملخص التنفيذي</h2>
+                <p>مشروع أمن سياسة أمان المحتوى (CSP Security Project) هو مبادرة تهدف إلى توفير مرجع شامل وموارد عملية لتطبيق سياسة أمان المحتوى (CSP) في تطبيقات الويب. يركز المشروع على تبسيط عملية فهم وتطبيق CSP، وهي آلية أمنية حاسمة للحماية من هجمات البرمجة النصية عبر المواقع (XSS) وهجمات حقن البيانات الأخرى. تم تطوير هذا المشروع لتمكين المطورين ومسؤولي الأمن من تعزيز أمان تطبيقاتهم الويب بشكل فعال.</p>
+
+                <h2>التحدي</h2>
+                <p>تعتبر هجمات XSS من أكثر الثغرات الأمنية شيوعًا وخطورة في تطبيقات الويب، حيث تسمح للمهاجمين بحقن نصوص برمجية ضارة في صفحات الويب التي يراها المستخدمون. على الرغم من وجود CSP كحل فعال، إلا أن تعقيد تطبيقها الصحيح غالبًا ما يمثل تحديًا للمطورين. تشمل التحديات الرئيسية ما يلي:</p>
+                <ul>
+                    <li>**التعقيد في التكوين**: تتطلب CSP فهمًا عميقًا لتوجيهاتها المختلفة وكيفية تفاعلها مع موارد الموقع.</li>
+                    <li>**التأثير على الوظائف**: قد يؤدي التكوين الخاطئ لـ CSP إلى حظر موارد مشروعة، مما يعطل وظائف الموقع.</li>
+                    <li>**نقص الموارد الموجهة باللغة العربية**: هناك نقص في الموارد الشاملة والمحدثة حول CSP باللغة العربية، مما يجعل من الصعب على المطورين العرب تطبيقها بفعالية.</li>
+                    <li>**مواكبة التطورات**: تتطور معايير وتوجيهات CSP باستمرار، مما يتطلب تحديث المعرفة والممارسات بشكل دوري.</li>
+                </ul>
+
+                <h2>الحل: CSP Security Project</h2>
+                <p>لمواجهة هذه التحديات، تم تصميم CSP Security Project ليكون مرجعًا شاملاً يغطي جميع جوانب CSP، من الأساسيات إلى التكوينات المتقدمة. يتضمن الحل المكونات التالية:</p>
+                <ul>
+                    <li>**شروحات مفصلة**: توفير وثائق واضحة ومبسطة تشرح مفهوم CSP، توجيهاتها، وكيفية عملها.</li>
+                    <li>**أمثلة عملية**: تقديم أمثلة حقيقية لتكوينات CSP لمختلف السيناريوهات، مما يساعد المطورين على البدء بسرعة.</li>
+                    <li>**أدوات مساعدة**: اقتراح أدوات وموارد خارجية تساعد في توليد واختبار سياسات CSP.</li>
+                    <li>**أفضل الممارسات**: توجيهات حول كيفية تطبيق CSP بأمان وفعالية دون التأثير على وظائف الموقع.</li>
+                    <li>**تحديثات مستمرة**: الالتزام بتحديث المحتوى لمواكبة أحدث معايير وتوصيات CSP.</li>
+                </ul>
+
+                <h2>التقنيات المستخدمة</h2>
+                <p>يعتمد المشروع بشكل أساسي على تقنيات الويب القياسية لتقديم المحتوى، مع التركيز على الوضوح وسهولة الوصول:</p>
+                <ul>
+                    <li>**HTML5**: لبناء هيكل الصفحات.</li>
+                    <li>**CSS3**: لتصميم الواجهة وجعلها جذابة وسهلة القراءة.</li>
+                    <li>**JavaScript**: لإضافة أي تفاعلات بسيطة أو وظائف مساعدة.</li>
+                    <li>**Markdown**: لكتابة الوثائق والشروحات لسهولة التحديث والصيانة.</li>
+                    <li>**GitHub Pages**: لاستضافة المشروع وتوفير وصول سهل للمستخدمين.</li>
+                </ul>
+
+                <h2>النتائج والأثر</h2>
+                <p>من خلال CSP Security Project، تم تحقيق النتائج التالية:</p>
+                <ul>
+                    <li>**زيادة الوعي الأمني**: ساهم المشروع في زيادة وعي المطورين العرب بأهمية CSP وكيفية تطبيقها.</li>
+                    <li>**تبسيط التطبيق**: قدم المشروع موارد عملية ساعدت المطورين على تطبيق CSP بشكل صحيح، مما قلل من الأخطاء الشائعة.</li>
+                    <li>**مرجع موثوق**: أصبح المشروع مرجعًا موثوقًا للمطورين والمهتمين بالأمن السيبراني باللغة العربية.</li>
+                    <li>**تحسين أمان الويب**: من خلال تشجيع تطبيق CSP، ساهم المشروع بشكل غير مباشر في تعزيز أمان تطبيقات الويب ضد هجمات XSS.</li>
+                </ul>
+
+                <h2>الدروس المستفادة</h2>
+                <ul>
+                    <li>أهمية توفير موارد تعليمية عملية وموجهة بلغة الجمهور المستهدف.</li>
+                    <li>الحاجة المستمرة لتحديث المحتوى الأمني لمواكبة التهديدات والحلول الجديدة.</li>
+                    <li>قوة المشاريع مفتوحة المصدر في بناء مجتمع معرفي وتبادل الخبرات.</li>
+                </ul>
+
+                <h2>المستقبل</h2>
+                <p>نطمح في المستقبل إلى توسيع CSP Security Project ليشمل:</p>
+                <ul>
+                    <li>**أدوات تفاعلية**: تطوير أدوات عبر الإنترنت لمساعدة المستخدمين في بناء واختبار سياسات CSP الخاصة بهم.</li>
+                    <li>**تغطية أمنية أوسع**: إضافة أقسام حول آليات أمنية أخرى ذات صلة بأمان الويب.</li>
+                    <li>**المساهمات المجتمعية**: تشجيع المطورين على المساهمة في المشروع لإثرائه بالمعرفة والخبرات المتنوعة.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>
+                    <span>عبدالاله عثمان غويث</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/AbdulElahOthmanGwaith" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abdulilah-othman-228948354" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://huggingface.co/AbdulElahOthmanGwaith" target="_blank" rel="noopener noreferrer" title="Hugging Face"><i class="fas fa-cube"></i></a>
+                    <a href="https://orcid.org/0009-0005-2911-8306" target="_blank" rel="noopener noreferrer" title="ORCID"><i class="fas fa-id-card"></i></a>
+                </div>
+                <p class="copyright">جميع الحقوق محفوظة &copy; 2026 عبدالاله عثمان غويث</p>
+                <p class="footer-text">مطور برمجيات متخصص في React, Next.js, Shopify Hydrogen والذكاء الاصطناعي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        const themeToggle = document.getElementById("theme-toggle");
+        const body = document.body;
+        const icon = themeToggle.querySelector("i");
+
+        const currentTheme = localStorage.getItem("theme") || "light-theme";
+        body.classList.add(currentTheme);
+        if (currentTheme === "dark-theme") {
+            icon.classList.replace("fa-moon", "fa-sun");
+        }
+
+        themeToggle.addEventListener("click", () => {
+            body.classList.toggle("dark-theme");
+            body.classList.toggle("light-theme");
+            
+            const theme = body.classList.contains("dark-theme") ? "dark-theme" : "light-theme";
+            localStorage.setItem("theme", theme);
+            
+            if (body.classList.contains("dark-theme")) {
+                icon.classList.replace("fa-moon", "fa-sun");
+            } else {
+                icon.classList.replace("fa-sun", "fa-moon");
+            }
+        });
+
+        document.querySelectorAll("a[href^=\"index.html#\"]").forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute("href").split("#")[1];
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
